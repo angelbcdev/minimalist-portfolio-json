@@ -1,0 +1,204 @@
+---
+import GitHub from "@/icons/GitHub.astro";
+import Section from "../Section.astro";
+import { projects } from "cv.json";
+---
+
+<Section title="Projects">
+  <div class="relative mb-4">
+    <div class="font-semibold absolute right-4 -top-9 flex h-8 gap-4">
+      <a
+        class="group relative inline-flex items-center overflow-hidden rounded
+      bg-gray-600 px-8 py-3 text-white focus:outline-none focus:ring
+      active:bg-gray-500"
+        href="/all-projects"
+      >
+        <span class="absolute -end-full transition-all group-hover:end-4">
+          <svg
+            class="size-5 rtl:rotate-180"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          </svg>
+        </span>
+
+        <span class="text-sm font-medium transition-all group-hover:me-4">
+          All
+        </span>
+      </a>
+    </div>
+  </div>
+  <ul>
+    {
+      projects.map(
+        ({ url, description, highlights, name, isActive, github, imagen }) => {
+          return (
+            <li>
+              <article>
+                <header>
+                  <h3 class="flex justify-between mb-3 items-center">
+                    {url != "" ? (
+                      <a
+                        href={url}
+                        target="_blank"
+                        title={`Ver el proyecto ${name}`}
+                      >
+                        {name}
+                      </a>
+                    ) : (
+                      <spawn>{name}</spawn>
+                    )}
+                    {isActive && <span>•</span>}
+                    {github && (
+                      <a
+                        class="github-code-link"
+                        href={github}
+                        target="_blank"
+                        title={`Ver código fuente del proyecto ${name}`}
+                      >
+                        <GitHub />
+                      </a>
+                    )}
+                  </h3>
+                  <div class="show-info">
+                    {imagen && (
+                      <img
+                        class="show-info--imagen"
+                        src={imagen}
+                        alt={`imagen-${name}`}
+                      />
+                    )}
+                    <p>{description}</p>
+                  </div>
+                </header>
+                <footer>
+                  {highlights.map((highlight) => {
+                    return <span>{highlight}</span>;
+                  })}
+                </footer>
+              </article>
+            </li>
+          );
+        }
+      )
+    }
+  </ul>
+
+  <style>
+    .show-info {
+      /* display: flex; */
+    }
+    .show-info--imagen {
+      width: 360px;
+      height: 240px;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 12px;
+      box-shadow: 2px 2px 2px #11111136;
+      margin-bottom: 8px;
+    }
+    ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-inline: -16px;
+    }
+
+    article {
+      border-radius: 8px;
+      border: 1px solid #f2f2f2;
+      gap: 16px;
+      display: flex;
+      flex-direction: column;
+      padding: 16px;
+      height: 100%;
+    }
+
+    article header {
+      flex: 1;
+    }
+
+    article h3 {
+      margin-bottom: 4px;
+    }
+
+    article a {
+      color: #111;
+    }
+
+    article a:hover {
+      text-decoration: underline;
+    }
+
+    article p {
+      font-size: 0.75rem;
+      line-height: 1.2rem;
+      margin-bottom: 4px;
+    }
+
+    article h3 span {
+      color: rgb(0, 188, 47);
+      animation-name: flicker;
+      animation-duration: 3s;
+      animation-timing-function: ease-in;
+      animation-iteration-count: infinite;
+    }
+
+    footer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      font-size: 0.6rem;
+    }
+
+    footer span {
+      border-radius: 6px;
+      background: #eee;
+      color: #444;
+      font-size: 0.6rem;
+      font-weight: 500;
+      padding: 0.2rem 0.6rem;
+    }
+
+    .github-code-link {
+      margin-left: 5px;
+    }
+
+    @keyframes flicker {
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.25;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @media (width <= 700px) {
+      ul {
+        margin-inline: 0px;
+      }
+
+      article {
+        border: none;
+        box-shadow: 0 1px 1px #f2f2f2;
+        padding: 0 0 16px 0;
+      }
+    }
+
+    @media print {
+      article h3 span {
+        animation-name: none;
+      }
+    }
+  </style>
+</Section>

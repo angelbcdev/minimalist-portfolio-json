@@ -1,0 +1,55 @@
+---
+import type { TRepositorioWithId } from "../provider/projects";
+export interface Props {
+  Repo: TRepositorioWithId;
+}
+
+const { Repo } = Astro.props;
+---
+
+<a
+  href={`/repoDetails/${Repo.id}`}
+  class="group relative w-[300px] m-6 bg-slate-500/40 rounded-lg block h-64 sm:h-80 lg:h-96"
+>
+  <div
+    class="relative flex h-full transform items-end bg-slate-100 border-2 rounded-lg border-black/90 transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2"
+  >
+    <div
+      class="p-4 relative !pt-0 transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8"
+    >
+      <div
+        class="overflow-hidden sm:w-[360px] sm:h-[240px] w-[320px] h-[180px] absolute bottom-12 sm:bottom-32"
+      >
+        <img
+          class="h-[200px] w-[240px] object-fill object-top absolute top-16"
+          src={Repo.img[0]}
+          alt={Repo.title}
+        />
+      </div>
+
+      <h2 class="mt-4 text-xl font-medium sm:text-2xl">{Repo.title}</h2>
+      <div class="flex flex-row gap-6">
+        {
+          Repo.detail.map((info: string) => (
+            <p class="bg-blue-200 rounded-xl  text-[10px] text-slate-800 py-1 px-2 shadow-md">
+              {info}
+            </p>
+          ))
+        }
+      </div>
+    </div>
+
+    <div
+      class="absolute -top-12 p-4 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8"
+    >
+      <h3 class="mt-4 text-xl font-medium sm:text-2xl">{Repo.title}</h3>
+
+      <p class="mt-4 h-[150px] overflow-auto text-sm sm:text-base">
+        {Repo.about}
+      </p>
+      <div>
+        <p class="mt-8 font-bold">Read more</p>
+      </div>
+    </div>
+  </div>
+</a>

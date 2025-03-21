@@ -1,0 +1,14 @@
+---
+import Section from "../Section.astro";
+import { experienceDeveloper } from "cv.json";
+const { title, url, summary } = experienceDeveloper;
+---
+
+<Section title="Developer's experience ">
+  <div class="flex flex-col gap-4">
+    <a href={url} target="_blank" class="hover:underline text-xl font-semibold">
+      <p>{title}</p>
+    </a>
+    <p>{summary}</p>
+  </div>
+</Section>
