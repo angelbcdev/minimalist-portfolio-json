@@ -11,7 +11,8 @@ export interface CV {
   interests: Array<Interests>;
   references: Array<References>;
   projects: Array<Projects>;
-  experienceDeveloper: ExperienceDeveloper;
+  experienceDeveloper: ExperienceDeveloper[];
+  workExperience: Array<WorkExperience>;
 }
 
 interface Basics {
@@ -149,4 +150,15 @@ interface ExperienceDeveloper {
   title: string;
   url: string;
   summary: string;
+}
+
+interface WorkExperience {
+  company: string;
+  position: string;
+  location: string;
+  startDate: DateStr;
+  endDate: DateStr;
+  description: string;
+  technologies: string[];
+  highlights: Highlight;
 }

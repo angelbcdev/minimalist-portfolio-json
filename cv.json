@@ -1,12 +1,12 @@
 {
   "basics": {
     "name": "Angel Alberto Bernechea ",
-    "label": "Full Stack and IOS dev with already 3 years to experiences",
+    "label": "ASP Protection Auditor",
     "image": "/me.png",
     "email": "alberto.bernechea@gmail.com",
     "phone": "+19786011460",
     "url": "https://54albert54.github.io",
-    "summary": "Enthusiastic and results-oriented professional with over 10 years of experience in warehouse management. Seeking to leverage strong problem-solving, project management, and communication skills in a software engineering role.  Possesses a passion for technology and has completed various courses and projects to gain programming proficiency. Eager to contribute to a fast-paced environment and continuously learn new skills.",
+    "summary": "Results-driven professional with over 10 years of experience in warehouse management, specializing in problem-solving, project management, and optimizing operations. Strong communicator with a track record of improving efficiency and workflow processes. Recently developed a passion for technology and completed various courses and projects to build programming expertise. Eager to apply industry knowledge while continuously growing technical skills in a software engineering role.",
     "location": {
       "address": "",
       "postalCode": "18702",
@@ -28,21 +28,40 @@
       }
     ]
   },
-  "experienceDeveloper":{
+ 
+  "experienceDeveloper":[{
      "title": "Active in the noCountry' community",
   "url": "https://www.nocountry.tech",
   "summary": "It is a community of Hispanics from Argentina that brings together a variety of people close to the Tech sector from different fields such as software developers, UX/UI, product managers, simulations of what a job would be like where each group is tasked with delivering a project and participated. in several sharing with people who, like me, are passionate about sharing what they know and always continuing to learn."
-  },
+  }],
+
   "work": [
     {
-      "name": "Home Depot",
+      "name": "The Home Depot",
+      "position": "Asset Protection Auditor",
+      "url": "#",
+      "startDate": "2024-09-12",
+      "endDate": "Current",
+      "summary": "has been AP Auditor I is my responsiblity make the current  audit of  trucks in the yard and inside in the 4-walks also attend in the front desk and be aware of security and safety of the company",
+      "highlights": [
+        "Safety and security",
+        "Pro Active",
+        "Team work",
+        "Problem solving"
+      ]
+    },
+    {
+      "name": "The Home Depot",
       "position": "ICQA",
       "url": "#",
       "startDate": "2022-08-08",
       "endDate": "2024-04-29",
       "summary": "Maintaining accurate inventory control, which is essential for smooth operations and customer satisfaction at Home Depot's warehouse ,analyze inventory data to identify discrepancies and investigate any inconsistencies. This might involve researching causes for missing or misplaced items.",
       "highlights": [
-        "Started the company"
+        "Inventory control",
+        "Cycle count",
+        "Investigate discrepancies",
+        "Problem solving"
       ]
     },
     {
@@ -72,8 +91,8 @@
   "education": [{
     "institution": "Universidad UAPA",
     "url": "https://www.uapa.edu.do/",
-    "area": "business administrator.",
-    "studyType": "",
+    "area": "business administrator ",
+    "studyType": "Business Administration",
     "startDate": "2007-01-01",
     "endDate": "2009-01-013",
     "score": "4.0",
@@ -90,9 +109,15 @@
     "endDate": "2024-01-013",
     "score": "4.0",
     "courses": [
-      "frontend-developer",
-      "javascript",
-      "swiftui"
+
+      "javascript & typescript",
+      "swiftUI",
+      "reactNative",
+      "nodejs",
+      "mysql",
+      "git & github"
+
+      
     ]
   }],
   "awards": [{
