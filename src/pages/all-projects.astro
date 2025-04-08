@@ -2,45 +2,17 @@
 import Section from "@/components/Section.astro";
 import { allRepo } from "../provider/projects";
 import RepoCard from "../components/RepoCard.astro";
+import Heather from "@/components/Heather.astro";
 ---
 
 <section class="w-screen h-screen overflow-hiden bg-[#00dddd50]">
   <section
-    class="max-w-[920px] mx-auto h-screen overflow-y-scroll bg-white shadow-2xl"
+    class="max-w-[920px] mx-auto h-[70%] overflow-y-scroll bg-white shadow-2xl"
   >
-    <div class="flex items-center w-full h-20 pl-10">
-      <a
-        class="group relative inline-flex items-center overflow-hidden rounded
-      bg-gray-600 px-8 py-3 text-white focus:outline-none focus:ring
-      active:bg-gray-500"
-        href="/"
-      >
-        <span class="absolute -end-full transition-all group-hover:end-4">
-          <svg
-            class="size-5 rotate-180"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-          </svg>
-        </span>
-
-        <span class="text-sm font-medium transition-all group-hover:me-4">
-          Back
-        </span>
-      </a>
-
-      <p class="text-3xl font-bold text-center w-full pr-24">All Projects</p>
-    </div>
+    <Heather title={"All Projects"} path={""} />
 
     <ul
-      class="max-w-[920px] h-screen overflow-y-scroll bg-white justify-center flex flex-wrap absolute -sleft-[70px]"
+      class="max-w-[920px] h-[92%] overflow-y-scroll bg-white justify-center flex flex-wrap absolute -sleft-[70px]"
     >
       {allRepo.map((element) => <RepoCard Repo={element} />)}
     </ul>

@@ -3,6 +3,7 @@ import Section from "../../components/Section.astro";
 import CarruselImg from "../../components/CarruselImg.astro";
 import type { TRepositorio } from "../../provider/projects";
 import { allRepo } from "../../provider/projects";
+import Heather from "@/components/Heather.astro";
 
 export function getStaticPaths() {
   // return ([{params:{dataid:848326}}])
@@ -16,40 +17,12 @@ const { repoID } = Astro.params;
 const showData: TRepositorio = allRepo.find((info) => info.id == repoID)!;
 ---
 
-<section class="bg-[#ff0fdd50]">
-  <section class="max-w-[920px] mx-auto h-s bg-white shadow-2xl">
-    <div class="flex items-center w-full h-10 pl-10">
-      <a
-        class="group relative inline-flex items-center overflow-hidden rounded
-      bg-gray-600 px-8 py-3 text-white focus:outline-none focus:ring
-      active:bg-gray-500"
-        href="/all-projects"
-      >
-        <span class="absolute -end-full transition-all group-hover:end-4">
-          <svg
-            class="size-5 rotate-180"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-          </svg>
-        </span>
-
-        <span class="text-sm font-medium transition-all group-hover:me-4">
-          Back
-        </span>
-      </a>
-
-      <p class="text-3xl font-bold text-center w-full pr-24">
-        Projects Dectails
-      </p>
-    </div>
+<section class="bg-[#ff0fdd50] h-screen overflow-hidden">
+  <section
+    class="min-w-[920px] h-screen mx-auto h-s bg-white shadow-2xl fixed top-0 left-20 md:left-1/2 md:-translate-x-1/2"
+  >
+    <!-- //Todo -->
+    <Heather title={"Information Projects"} path={"all-projects"} />
 
     <div
       class="overflow-hidden relative w-[800px] mt-10 bg-slate-50 mx-auto rounded-lg transition shadow-lg border-2 -translate-x-2 -translate-y-2 border-black pb-6"
