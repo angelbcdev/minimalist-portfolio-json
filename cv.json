@@ -33,7 +33,12 @@
      "title": "Active in the noCountry' community",
   "url": "https://www.nocountry.tech",
   "summary": "It is a community of Hispanics from Argentina that brings together a variety of people close to the Tech sector from different fields such as software developers, UX/UI, product managers, simulations of what a job would be like where each group is tasked with delivering a project and participated. in several sharing with people who, like me, are passionate about sharing what they know and always continuing to learn."
-  }],
+  },{
+  "title": "Local Projects Across Multiple Tech Areas",
+  "url": "https://porfolio-angel-bernecha.netlify.app",
+  "summary": "Participated in and led several local projects focused on different areas of technology, including web pages, web applications, backend servers, and iOS mobile apps. These projects helped me gain hands-on experience using tools like HTML/CSS, JavaScript, React, Node.js, and Swift. Each project was an opportunity to apply and reinforce my learning, collaborate with others, and solve real-world problems. I explored full-stack development, API integrations, and mobile development to build practical and functional solutions for everyday use cases."
+}
+],
 
   "work": [
     {
