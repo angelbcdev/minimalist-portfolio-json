@@ -4,6 +4,7 @@ import CarruselImg from "../../components/CarruselImg.astro";
 import type { TRepositorio } from "../../provider/projects";
 import { allRepo } from "../../provider/projects";
 import Heather from "@/components/Heather.astro";
+import LinksButton from "@/components/LinksButton.astro";
 
 export function getStaticPaths() {
   // return ([{params:{dataid:848326}}])
@@ -15,17 +16,19 @@ export function getStaticPaths() {
 const { repoID } = Astro.params;
 
 const showData: TRepositorio = allRepo.find((info) => info.id == repoID)!;
+
+const { title, about, img, code, repoLink, pageLink } = showData;
 ---
 
 <section class="bg-[#ff0fdd50] h-screen overflow-hidden">
   <section
-    class="min-w-[920px] h-screen mx-auto h-s bg-white shadow-2xl fixed top-0 left-20 md:left-1/2 md:-translate-x-1/2"
+    class="min-w-[920px] h-screen mx-auto bg-white shadow-2xl fixed top-0 left-20 md:left-1/2 md:-translate-x-1/2"
   >
     <!-- //Todo -->
     <Heather title={"Information Projects"} path={"all-projects"} />
 
     <div
-      class="overflow-hidden relative w-[800px] mt-10 bg-slate-50 mx-auto rounded-lg transition shadow-lg border-2 -translate-x-2 -translate-y-2 border-black pb-6"
+      class="overflow-hidden relative w-[800px] h-[1000px] mt-10 bg-slate-50 mx-auto rounded-lg transition shadow-lg border-2 -translate-x-2 -translate-y-2 border-black pb-6"
     >
       <h3
         class="text-2xl mb-4 w-full text-gray-900 font-semibold text-center mt-6"
@@ -43,44 +46,41 @@ const showData: TRepositorio = allRepo.find((info) => info.id == repoID)!;
         <p class="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
           {showData.about}
         </p>
-        <div class="flex flex-col gap-2 w-full">
+        <div class="flex flex-col gap-2 w-full h-36 overflow-scroll">
           {
             showData?.características?.map((tools, index) => (
-              <span class="whitespace-nowrap rounded-full bg-steal-100 px-2.5 py-0.5 text-xs text-grey-600">
-                {index + 1}-{tools}.
-              </span>
+              <p class="whitespace-nowrap rounded-full bg-steal-100 px-2.5 relative  text-xs text-grey-600 pl-5">
+                <span class="size-2 bg-black rounded-full absolute top-1 left-0" />
+                {tools}.
+              </p>
             ))
           }
         </div>
         <div class="flex flex-row gap-2 w-full">
           {
             showData.code.map((tools) => (
-              <span class="whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-xs text-purple-600">
+              <span class="bg-blue-200 rounded-md font-semibold  text-[14px] text-slate-800 py-1 px-2  mx-1">
                 {tools}
               </span>
             ))
           }
         </div>
 
-        <div class="flex flex-row gap-2">
-          <span
-            class="whitespace-nowrap rounded-full bg-steal-100 px-2.5 py-0.5 text-xs text-grey-600 hover:underline"
-          >
-            {
-              showData.pageLink != "" ? (
-                <a target="_blank" href={showData.pageLink}>
-                  Web page
-                </a>
-              ) : (
-                <p>-</p>
-              )
-            }
-          </span>
-          <span
-            class="whitespace-nowrap rounded-full bg-steal-100 px-2.5 py-0.5 text-xs text-grey-600 hover:underline"
-          >
-            <a target="_blank" href={showData.repoLink}>GitHub page</a>
-          </span>
+        <div class="w-full flex flex-row gap-2">
+          {
+            repoLink != "" && (
+              <LinksButton links={repoLink} type="github">
+                Github
+              </LinksButton>
+            )
+          }
+          {
+            pageLink != "" && (
+              <LinksButton links={pageLink} type="web">
+                Web Page
+              </LinksButton>
+            )
+          }
         </div>
       </div>
     </div>

@@ -12,7 +12,7 @@ import Heather from "@/components/Heather.astro";
     <Heather title={"All Projects"} path={""} />
 
     <ul
-      class="max-w-[920px] h-screen overflow-y-scroll bg-white justify-center grid relative top-10 grid-cols-2 absoslute"
+      class="max-w-[920px] h-screen overflow-y-scroll bg-white justify-center grid relative top-10 grid-cols-1 md:grid-cols-2 absoslute"
     >
       {allRepo.map((element) => <RepoCard Repo={element} />)}
     </ul>
